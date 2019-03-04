@@ -22,7 +22,7 @@ And add a card with type `custom:weather-card-extended`:
 - type: custom:weather-card-extended
   entity: weather.YourWeatherEntity
   mode: daily or hourly (daily is default - Optional)
-  name: Name of your Weather Entity (Optional)
+  name: Name of your Weather Entity - Optional
 ```
 As this is a fork of [bramkragten's](https://github.com/bramkragten) Weather Card, there is still a link in here to the hosted icons. But if you want to use your local hosted icons, then add the following: (Where icons points to a directory where the amChart Icons have been stored)
 ```yaml
