@@ -3,7 +3,7 @@
 This is a modified version of the [*Lovelace animated weather card*](https://github.com/bramkragten/custom-ui/tree/master/weather-card). I have added support for more attributes and also for daily and hourly mode, meaning this card can be used as a standard Weather Card for all Weather Components, but will also work with the Dark Sky Weather Component in hourly mode.
 The main purpose for building it, was to have a Card that could display the additional attributes I have included in my Custom Weather Component called WeatherFlow. So on top of the extra information that the *animated weather card* is already showing, you also get Todays Rain and Wind Speed in the Forecast.
 
-![alt text](https://github.com/briis/home-assistant/blob/master/custom-lovelace/weather-card-extended/images/weather-card-extended-dark.png "Weather Card Extended Dark")![alt text](https://github.com/briis/home-assistant/blob/master/custom-lovelace/weather-card-extended/images/weather-card-extended-light.png "Weather Card Extended Light")
+![alt text](https://github.com/briis/ha-weather-card-extended/blob/master/images/weather-card-extended-dark.png "Weather Card Extended Dark")![alt text](https://github.com/briis/ha-weather-card-extended/blob/master/images/weather-card-extended-light.png "Weather Card Extended Light")
 
 ## Installation
 1. Download the [weather-card-extended.js](https://raw.githubusercontent.com/briis/home-assistant/master/custom-lovelace/weather-card-extended/weather-card-extended.js) and [weather-card-editor-extended.js](https://raw.githubusercontent.com/briis/home-assistant/master/custom-lovelace/weather-card-extended/weather-card-editor-extended.js) to `/config/www/custom-lovelace/weather-card-extended/` (or any other folder in the `/config/www` directory.
