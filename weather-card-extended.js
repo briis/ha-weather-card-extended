@@ -132,7 +132,11 @@ class WeatherCard extends LitElement {
           style="background: none, url(${this.getWeatherIcon(stateObj.state.toLowerCase(),this.hass.states["sun.sun"].state)}) no-repeat; background-size: contain;">${stateObj.state}
         </span>
         ${this._config.name
-            ? html`<span class="title"> ${this._config.name} </span><span class="subtitle"> ${this.capitalize(stateObj.state)} </span>`
+            ? html`<span class="title"> ${this._config.name} </span><span class="subtitle">
+              ${stateObj.attributes.state_local
+                ? html`${stateObj.attributes.state_local}`
+                : html`${this.capitalize(stateObj.state)}`
+              }</span>`
             : html`<span class="title"> ${this.capitalize(stateObj.state)} </span>`
         }
         <span class="temp">
@@ -311,6 +315,14 @@ class WeatherCard extends LitElement {
     }
   }
 
+  getSubtitle() {
+    return `${
+      this.stateObj.attributes.state_local
+        ? this.stateObj.attributes.state_local
+        : this.capitalize(stateObj.state)
+    }
+    `;
+  }
   _handleClick() {
     fireEvent(this, "hass-more-info", { entityId: this._config.entity });
   }
