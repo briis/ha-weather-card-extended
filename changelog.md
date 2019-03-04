@@ -1,0 +1,10 @@
+# Change Log
+
+Version **0.1.3** - Updated March 2nd, 2019
+* Weather State is now displayed as a subtitle under the name text. If name is not defined, then State will be the title
+
+Version **0.1.1** - Updated March 1st, 2019
+* Minor CSS adjustments to make space between Icon and Title
+
+Version **0.1.0** - Updated March 1st, 2019
+* Initial Release
