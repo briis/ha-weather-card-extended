@@ -33,6 +33,40 @@ const weatherIconsNight = {
 const windDirections_en = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'];
 const windDirections_da = ['N','NNØ','NØ','ØNØ','Ø','ØSØ','SØ','SSØ','S','SSV','SV','VSV','V','VNV','NV','NNV','N'];
 
+const weatherState_da = {
+  "clear-night": "Klart, nat",
+   "cloudy": "Overskyet",
+   "fog": "Tåge",
+   "hail": "Hagl",
+   "lightning": "Lyn",
+   "lightning-rainy": "Lyn, regnvejr",
+   "partlycloudy": "Delvist overskyet",
+   "pouring": "Regnvejr",
+   "rainy": "Regnfuldt",
+   "snowy": "Snedækket",
+   "snowy-rainy": "Snedækket, regnfuldt",
+   "sunny": "Solrig",
+   "windy": "Blæsende",
+   "windy-variant": "Blæsende"
+}
+
+const weatherState_en = {
+  "clear-night": "Clear, night",
+   "cloudy": "Cloudy",
+   "fog": "Fog",
+   "hail": "Hail",
+   "lightning": "Lightning",
+   "lightning-rainy": "Lightning, rainy",
+   "partlycloudy": "Partly cloudy",
+   "pouring": "Pouring",
+   "rainy": "Rainy",
+   "snowy": "Snowy",
+   "snowy-rainy": "Snowy, rainy",
+   "sunny": "Sunny",
+   "windy": "Windy",
+   "windy-variant": "Windy"
+}
+
 const fireEvent = (node, type, detail, options) => {
   options = options || {};
   detail = detail === null || detail === undefined ? {} : detail;
@@ -132,12 +166,8 @@ class WeatherCard extends LitElement {
           style="background: none, url(${this.getWeatherIcon(stateObj.state.toLowerCase(),this.hass.states["sun.sun"].state)}) no-repeat; background-size: contain;">${stateObj.state}
         </span>
         ${this._config.name
-            ? html`<span class="title"> ${this._config.name} </span><span class="subtitle">
-              ${stateObj.attributes.state_local
-                ? html`${stateObj.attributes.state_local}`
-                : html`${this.capitalize(stateObj.state)}`
-              }</span>`
-            : html`<span class="title"> ${this.capitalize(stateObj.state)} </span>`
+            ? html`<span class="title">${this._config.name} </span><span class="subtitle">${this.getWeatherState(stateObj.state.toLowerCase())}</span>`
+            : html`<span class="title">${this.getWeatherState(stateObj.state.toLowerCase())}</span>`
         }
         <span class="temp">
           ${this.getUnit("temperature") == "°F"
@@ -312,6 +342,16 @@ class WeatherCard extends LitElement {
         return "Føles som: "+temp;
       default:
         return "Feels like: "+temp;
+    }
+  }
+
+  getWeatherState(state) {
+    const lang = this.hass.selectedLanguage || this.hass.language;
+    switch (lang) {
+      case "da":
+        return weatherState_da[state];
+      default:
+        return weatherState_en[state];
     }
   }
 
