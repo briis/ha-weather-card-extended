@@ -1,0 +1,9 @@
+{
+  "weather-card-extended": {
+    "updated_at": "2019-03-04",
+    "version": "0.1.5",
+    "remote_location": "https://raw.githubusercontent.com/briis/ha-weather-card-extended/master/weather-card-extended.js",
+    "visit_repo": "https://github.com/briis/ha-weather-card-extended",
+    "changelog": "https://github.com/briis/ha-weather-card-extended/blob/master/changelog.md"
+  }
+}
