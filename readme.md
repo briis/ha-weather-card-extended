@@ -43,5 +43,5 @@ This Card support the Custom Updater, so if you have this enabled on your system
 ```yaml
 custom_updater:
   card_urls:
-    - https://raw.githubusercontent.com/briis/home-assistant/master/custom_cards.json
+    - https://raw.githubusercontent.com/briis/ha-weather-card-extended/master/custom_cards.json
 ```
